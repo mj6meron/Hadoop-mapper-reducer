@@ -23,7 +23,11 @@ for i in range(0, ln):
     content = e.get_payload()
 
     print('%s\t%s\t%s' % (sender, reciever,content))
-    
+
     #print("sender -> ", sender)
     #print("reciever -> ", reciever)
     #print("content -> ", content)
+
+
+
+    # Reference -> https://www.kaggle.com/code/meron11111/data-cleaning-enron-email-dataset/edit
