@@ -1,6 +1,10 @@
-#!/usr/bin/env python
+"""
+Mapper.py code written by Meron
+"""
+
 import sys
 import pandas as pd
+import email
 
 # function to extract the last "clean" message from the email body
 def clean_email(email):
@@ -10,11 +14,16 @@ def clean_email(email):
 counter = 0
 
 emailsdf = pd.read_csv(sys.stdin, nrows=10)
-emailsdf['email_body'] = emailsdf['message'].apply(clean_email)
+ln = emailsdf.shape[0]
+for i in range(0, ln):
+    message = emailsdf.loc[i]['message']
+    e = email.message_from_string(message)
+    sender = e.get('From')
+    reciever = e.get('To')
+    content = e.get_payload()
 
-for index, row in emailsdf.iterrows():
-    if row["email_body"] is not None:
-        #print('%s\t%s' % (index, row["email_body"]))
-        counter += 1
-        print('%s\t%s' % (counter, row["email_body"]))
-
+    print('%s\t%s\t%s' % (sender, reciever,content))
+    
+    #print("sender -> ", sender)
+    #print("reciever -> ", reciever)
+    #print("content -> ", content)
