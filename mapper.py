@@ -6,13 +6,6 @@ import sys
 import pandas as pd
 import email
 
-# function to extract the last "clean" message from the email body
-def clean_email(email):
-    return ''.join([s.strip() for s in email.splitlines()][15:])
-
-# counter variable
-counter = 0
-
 emailsdf = pd.read_csv(sys.stdin, nrows=10)
 ln = emailsdf.shape[0]
 for i in range(0, ln):
