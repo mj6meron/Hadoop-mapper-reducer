@@ -5,6 +5,8 @@ import sys
 current_subject = None
 current_body = None
 
+subject = None
+
 # input comes from standard input
 for line in sys.stdin:
     # remove leading and trailing whitespace
@@ -22,5 +24,5 @@ for line in sys.stdin:
         current_subject = subject
 
 # do not forget to output the last subject if needed!
-if current_subject == subject:
+if current_subject == current_subject:
     print ('%s\t%s' % (current_subject, current_body))

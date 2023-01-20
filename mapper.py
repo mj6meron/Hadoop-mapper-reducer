@@ -8,7 +8,6 @@ counter = 0
 
 # input comes from standard input
 for line in sys.stdin:
-    
 
     # check if the counter is less than or equal to 10
     if counter <= 10:
@@ -22,7 +21,7 @@ for line in sys.stdin:
         # check if the subject is not None
         if subject is not None:
             # increase counters
-            print ('%s\t%s' % (subject, body))
+            print('%s\t%s' % (subject, body))
 
             # increment the counter
             counter += 1
