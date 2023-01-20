@@ -25,7 +25,9 @@ for i in range(0, ln):
     We can also map out and manipulate the content, But for this case, 
     only a pair of a sender and reciever is needed
     """
-    content = e.get_payload()  # Here we cound use and map out the content
+    content = e.get_payload()  
+    # Here we cound use and map out the content
+    #print('%s\t%s\t%s' % (sender, reciever, content))
 
     print('%s\t%s' % (sender, reciever))
 
@@ -33,6 +35,3 @@ for i in range(0, ln):
     #print("reciever -> ", reciever)
     #print("content -> ", content)
 
-
-
-    # Reference -> https://www.kaggle.com/code/meron11111/data-cleaning-enron-email-dataset/edit
