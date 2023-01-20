@@ -12,5 +12,7 @@ for line in sys.stdin:
     subject = msg.get('subject')
     body = msg.get_payload()
 
-    # increase counters
-    print('%s\t%s' % (subject, body))
+    # check if the subject is not None
+    if subject is not None:
+        # increase counters
+        print ('%s\t%s' % (subject, body))
