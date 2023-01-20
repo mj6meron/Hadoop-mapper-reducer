@@ -9,15 +9,15 @@ def clean_email(email):
 # counter variable
 counter = 0
 
+emailsdf = pd.read_csv(sys.stdin)    
+emailsdf['email_body'] = emailsdf['message'].apply(clean_email)
+
 # input comes from standard input
-for line in sys.stdin:
+for line in emailsdf['email_body']:
     # parse the email message
-    emailsdf = pd.read_csv(line.strip())
-    emailsdf['email_body'] = emailsdf['message'].apply(clean_email)
-    # get the subject and body of the email
-    emailsdf['index'] = emailsdf.index
-    index = emailsdf.get('index')
-    body = emailsdf.get('email_body')
+    
+    index = emailsdf.emailsdf.index
+    body = line
 
     # check if the body is not None
     if body is not None:
