@@ -9,20 +9,12 @@ def clean_email(email):
 # counter variable
 counter = 0
 
-emailsdf = pd.read_csv(sys.stdin)    
+emailsdf = pd.read_csv(sys.stdin, nrows=10)
 emailsdf['email_body'] = emailsdf['message'].apply(clean_email)
 
-# input comes from standard input
-for line in emailsdf['email_body']:
-    # parse the email message
-    
-    index = index = emailsdf.index
-    body = line
-
-    # check if the body is not None
-    if body is not None:
-        # increase counters
+for index, row in emailsdf.iterrows():
+    if row["email_body"] is not None:
+        #print('%s\t%s' % (index, row["email_body"]))
         counter += 1
-        print('%s\t%s' % (counter, body))
-    if counter == 10:
-        break
+        print('%s\t%s' % (counter, row["email_body"]))
+
