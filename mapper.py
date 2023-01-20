@@ -22,7 +22,7 @@ for line in emailsdf['email_body']:
     # check if the body is not None
     if body is not None:
         # increase counters
-        print('%s\t%s' % (index, body))
         counter += 1
+        print('%s\t%s' % (counter, body))
     if counter == 10:
         break
