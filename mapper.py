@@ -20,9 +20,14 @@ for i in range(0, ln):
     e = email.message_from_string(message)
     sender = e.get('From')
     reciever = e.get('To')
-    content = e.get_payload()
 
-    print('%s\t%s\t%s' % (sender, reciever,content))
+    """
+    We can also map out and manipulate the content, But for this case, 
+    only a pair of a sender and reciever is needed
+    """
+    content = e.get_payload()  # Here we cound use and map out the content
+
+    print('%s\t%s' % (sender, reciever))
 
     #print("sender -> ", sender)
     #print("reciever -> ", reciever)
