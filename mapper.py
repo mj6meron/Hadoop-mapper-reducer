@@ -19,7 +19,7 @@ for line in sys.stdin:
         body = msg.get_payload()
 
         # check if the subject is not None
-        if subject is not None:
+        if (subject and body) is not None:
             # increase counters
             print('%s\t%s' % (subject, body))
 
