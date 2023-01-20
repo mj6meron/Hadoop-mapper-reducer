@@ -16,7 +16,7 @@ emailsdf['email_body'] = emailsdf['message'].apply(clean_email)
 for line in emailsdf['email_body']:
     # parse the email message
     
-    index = emailsdf.emailsdf.index
+    index = index = emailsdf.index
     body = line
 
     # check if the body is not None
