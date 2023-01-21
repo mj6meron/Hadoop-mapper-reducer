@@ -1,0 +1,6 @@
+This file is just some commands to run for testing in a python environment
+
+python3 mapper.py < input_data.txt > output_mapper.txt
+sort -k1,1 output_mapper.txt > output_sorted.txt
+python3 reducer.py < output_sorted.txt > final_output.txt
+
