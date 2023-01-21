@@ -28,15 +28,11 @@ for i in range(0, ln):
     temp_df = pd.DataFrame([row])
     cleanedDF = cleanedDF.append(temp_df, ignore_index=True)
 
-    print('%s\t%s\t%s' % (date, sender, reciever))
-
 cleanedDF.dropna()
 ln2 = emailsdf.shape[0]
 for i in range(0, ln2):
-    print('%s\t%s\t%s' % (cleanedDF.loc[i]['Date'], cleanedDF.loc[i]['Sender'], cleanedDF.loc[i]['Receiver']))
-
-
-
-    #print("sender -> ", sender)
-    #print("reciever -> ", reciever)
-    #print("content -> ", content)
+    print(cleanedDF.loc[i]['Date'])
+    # print('%s\t%s\t%s' % (cleanedDF.loc[i]['Date'], cleanedDF.loc[i]['Sender'], cleanedDF.loc[i]['Receiver']))
+    # print("sender -> ", sender)
+    # print("reciever -> ", reciever)
+    # print("content -> ", content)
