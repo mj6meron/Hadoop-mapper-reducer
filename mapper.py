@@ -25,8 +25,12 @@ for i in range(0, ln):
     date = '%s,%s,%s' % (datearray[1], datearray[0], datearray[2])
 
     row = {"Date": date, "Sender": sender, "Receiver": reciever}
-    temp_df = pd.DataFrame([row])
-    cleanedDF = cleanedDF.append(temp_df, ignore_index=True)
+
+    # Convert the row to a DataFrame
+    row_df = pd.DataFrame([row], index=[0])
+
+    # Concatenate the row DataFrame with the existing DataFrame
+    cleanedDF = pd.concat([cleanedDF, row_df], ignore_index=True)
 
 cleanedDF.dropna()
 ln2 = emailsdf.shape[0]
