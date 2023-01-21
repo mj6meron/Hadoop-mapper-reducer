@@ -9,13 +9,12 @@ current_sender = None
 count = 0
 
 for line in sys.stdin:
-    line = line.strip()
-    day, sender, reciever = line.split('\t')
+    day = line.strip()
     if current_day == day:
         count += 1
     else:
         if current_day:
-            print(current_day,count)
+            print('%s\t%s' % (current_day, count))
         current_day = day
         count = 1
 
@@ -25,4 +24,4 @@ The if statement at the end of the file is checking if the current day is the sa
 """
 
 if current_day == day:
-    print(current_day, count)
+    print('%s\t%s' % (current_day, count))
