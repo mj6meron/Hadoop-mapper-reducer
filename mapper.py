@@ -22,7 +22,8 @@ for i in range(0, ln):
     # Here we cound use and map out the content
     #print('%s\t%s\t%s' % (sender, reciever, content))
 
-    date = e.get('Date').split()[1:4]
+    datearray = e.get('Date').split()[1:4]
+    date = '%s,%s,%s' % (datearray[1], datearray[0], datearray[2])
     print('%s\t%s\t%s' % (date, sender, reciever))
 
     #print("sender -> ", sender)
