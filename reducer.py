@@ -1,3 +1,7 @@
+"""
+This works on sorted input. The input has to be sorted.
+"""
+
 import sys
 
 current_day = None
@@ -15,5 +19,10 @@ for line in sys.stdin:
         current_day = day
         count = 1
 
-if current_day == day and current_sender == sender:
-    print(current_day,current_sender,count)
+
+"""
+The if statement at the end of the file is checking if the current day is the same as the last day that was processed. 
+"""
+
+if current_day == day:
+    print(current_day, count)
