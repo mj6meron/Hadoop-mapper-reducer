@@ -1,6 +1,4 @@
-"""
-Mapper.py code written by Meron
-"""
+
 
 import sys
 import pandas as pd
